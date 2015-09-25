@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @redirect.source %>
+</p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @redirect.target %>
+</p>
+
+<p>
+  <strong>Changedby:</strong>
+  <%= @redirect.changedby %>
+</p>
+
+<p>
+  <strong>Published:</strong>
+  <%= @redirect.published %>
+</p>
+
+<%= link_to 'Edit', edit_redirect_path(@redirect) %> |
+<%= link_to 'Back', redirects_path %>

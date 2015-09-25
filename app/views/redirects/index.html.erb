@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Redirects</h1>
+
+<%= link_to 'New Redirect', new_redirect_path, { :class=>"button radius small" } %>
+
+
+<table id="redirects-table"  class="display" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Source</th>
+      <th>Target</th>
+      <th>Changedby</th>
+      <th>Published</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @redirects.each do |redirect| %>
+      <tr>
+        <td><%= redirect.source %></td>
+        <td><%= redirect.target %></td>
+        <td><%= redirect.changedby %></td>
+        <td><%= redirect.published %></td>
+        <td><%= link_to 'Edit', edit_redirect_path(redirect),{ :class=>"button tiny radius" } %></td>
+        <td><%= link_to 'Delete', redirect, method: :delete, data: { confirm: 'Are you sure?' },class: 'button tiny radius alert secondary' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<script>
+$(document).ready(function() {
+    $('#redirects-table').DataTable();
+} );
+</script>

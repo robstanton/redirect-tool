@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+   <!-- app/views/shared/_navigation.html.erb -->
+
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="/">Redirects tool</a></h1>
+    </li>
+
+    <li class="toggle-topbar">
+      <a href="#"><span>Menu</span></a>
+    </li>
+  </ul>
+</nav>
+
+     <div class="row">
+      <% flash.each do |name, msg| %>
+        <% if msg.is_a?(String) %>
+          <%= content_tag :div, msg, class: "alert-box #{name} radius" %>
+        <% end %>
+      <% end %>
+    </div>
+
+  
+      <div class="row">
+    
+        <%= yield %>
+      </div>
+   
+
+  </body>
+</html>
