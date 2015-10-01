@@ -51,6 +51,35 @@ class RedirectsController < ApplicationController
     end
   end
 
+ 
+
+   # upload csv
+  def upload
+
+  end
+
+   # import from CSV
+  def import
+     
+
+     @result = Redirect.import(params[:file])  
+
+     if @result["success"] == true
+
+         flash[:success] = @result["message"] 
+         redirect_to :redirects
+
+     else
+
+         flash[:alert] =  @result["message"] 
+         redirect_to :upload
+
+     end
+   
+  end
+
+
+
   # DELETE /redirects/1
   # DELETE /redirects/1.json
   def destroy

@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(version: 20150924162532) do
 
   create_table "redirects", force: :cascade do |t|
-    t.string   "source"
-    t.string   "target"
-    t.string   "changedby"
-    t.boolean  "published"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "source",                     null: false
+    t.string   "target",                     null: false
+    t.string   "changedby",                  null: false
+    t.boolean  "published",  default: false, null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
 end

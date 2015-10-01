@@ -31,6 +31,7 @@
      <div class="row">
       <% flash.each do |name, msg| %>
         <% if msg.is_a?(String) %>
+          <br/>
           <%= content_tag :div, msg, class: "alert-box #{name} radius" %>
         <% end %>
       <% end %>
